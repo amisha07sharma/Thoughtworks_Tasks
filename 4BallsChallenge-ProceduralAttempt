@@ -4,7 +4,7 @@ public class TryProcessing extends PApplet {
     public static final int HEIGHT = 1000;
     public static final int WIDTH = 1000;
     public static final int SIZE = 20;
-    float x,y,z,w =0;
+    int x,y,z,w =0;
     public static void main(String[] args) {
         PApplet.main("TryProcessing",args);
     }
@@ -27,12 +27,12 @@ public class TryProcessing extends PApplet {
 
     private void getEllipse() {
         ellipse(x, HEIGHT/5, SIZE, SIZE);
-        x = (float) (x + 1);
+        x=x+1;
         ellipse(y,HEIGHT*2/5, SIZE, SIZE);
-        y= (float) (y + 1.5);
+        y=y+2;
         ellipse(z,HEIGHT*3/5, SIZE, SIZE);
-        z = (float) (z + 2);
+        z=z+3;
         ellipse(w,HEIGHT*4/5, SIZE, SIZE);
-        w = (float) (w + 2.5);
+        w=w+4;
     }
 }

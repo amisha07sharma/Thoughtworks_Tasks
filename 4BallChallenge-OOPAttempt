@@ -1,0 +1,69 @@
+import processing.core.PApplet;
+
+public class TryProcessing extends PApplet {
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 1000;
+    public static final int C = 10;
+    int b1,b2,b3,b4 = 0;
+    Ball ball1;
+    Ball ball2;
+    Ball ball3;
+    Ball ball4;
+    public static void main(String[] args) {
+        PApplet.main("TryProcessing",args);
+    }
+
+    @Override
+    public void settings() {
+        super.settings();
+        size(WIDTH, HEIGHT);
+    }
+
+    @Override
+    public void setup() {
+        ball1 = new Ball(b1, HEIGHT / 5, C, C);
+        ball2 = new Ball(b2, HEIGHT *2 / 5, C, C);
+        ball3 = new Ball(b3, HEIGHT * 3 / 5, C, C);
+        ball4 = new Ball(b4, HEIGHT * 4 / 5, C, C);
+    }
+
+    @Override
+    public void draw() {
+        make_ball();
+        move_ball();
+    }
+
+    private void move_ball() {
+        ball1.move(1);
+        ball2.move(2);
+        ball3.move(3);
+        ball4.move(4);
+    }
+
+    private void make_ball() {
+        ball1.circle();
+        ball2.circle();
+        ball3.circle();
+        ball4.circle();
+    }
+
+    class Ball{
+        public int a;
+        public int b;
+        public int c;
+        public int d;
+
+        public Ball(int a, int b, int c, int d){
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+        }
+        public void circle(){
+            ellipse(a,b,c,d);
+        }
+        public void move(int inc){
+            a+=inc;
+        }
+    }
+}
